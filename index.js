@@ -76,5 +76,23 @@ class spiky {
             }
         })
     };
+    /**
+     * 
+     * @param {Number} time - Wait for x seconds
+     */
+    wait(time) {
+        if (typeof time === Number) {
+            fs.readFile(this.filename, (err, data) => {
+                if (!err) {
+                    let text = String(data);
+                    text = text + `\nwait_for_seconds(${time})`
+                } else {
+                    console.log(err);
+                }
+            })
+        } else {
+            return new Error("TypeError: time must be a number!")
+        }
+    }
 };
 module.exports = spiky;
