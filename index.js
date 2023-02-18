@@ -33,14 +33,14 @@ class spiky {
                         steering = 0;
                     };
                     if (speed == undefined) {
-                        speed = 0;
+                        speed = 50;
                     };
                     fs.readFile(this.filename, (err, data) => {
                         if (!err) {
                             let text = String(data);
                             let motor1 = motors.motor1;
                             let motor2 = motors.motor2;
-                            text = text + `\nMotorPair(${motor1}, ${motor2})`
+                            text = text + `\nMotorPair(${motor1}, ${motor2}).move(${amount}, ${unit}, ${steering}, ${speed})`
                         } else {
                             console.log(err);
                         }
