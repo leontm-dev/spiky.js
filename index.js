@@ -1,5 +1,5 @@
 const fs = require("fs");
-class spiky {
+class Spiky {
     /**
      * 
      * @param {String} filename 
@@ -95,4 +95,4 @@ class spiky {
         }
     }
 };
-module.exports = spiky;
+module.exports = Spiky;
