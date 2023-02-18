@@ -77,6 +77,4 @@ class spiky {
         })
     };
 };
-
-let Editor = new spiky("stats");
-Editor.move( {motor1, motor2}, 2, )
+module.exports = spiky;
