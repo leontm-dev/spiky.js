@@ -11,9 +11,6 @@
   "dependencies": {
     "fs": "^0.0.1-security"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "funding": {
     "type": "BuyMeACoffee",
     "url": "https://www.buymeacoffee.com/leontm"
