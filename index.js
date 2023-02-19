@@ -248,4 +248,4 @@ class Speaker extends Spiky {
         }
     }
 };
-module.exports = {Spiky, MotorPair, Timer, StatusLight,  Speaker};
+module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker };
