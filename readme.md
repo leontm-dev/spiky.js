@@ -6,6 +6,7 @@ A way to run the spike prime robot with the beauty of JavaScript
 2. [How it works](#working-process)
 3. [How to start](#start-coding)
 4. [Licenses and developers](#licenses-and-developers)
+5. [Docs](https://spiky-js.gitbook.io/docs/)
 
 
 ## Installation
