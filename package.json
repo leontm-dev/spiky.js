@@ -1,6 +1,6 @@
 {
   "name": "spiky.js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "This is a package, in which you can write JS to code with the Spike Prime",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,9 @@
     "url": "https://www.buymeacoffee.com/leontm"
   },
   "readme": "https://github.com/leontm-dev/spiky/blob/master/readme.md",
+  "directories": {
+    "doc": "https://spiky-js.gitbook.io/docs/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/leontm-dev/spiky"
