@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "LeonTM",
+  "author": "LeonTM <leontm.dev@gmail.com> (https://me.leontm-official.repl.co)",
   "license": "ISC",
   "dependencies": {
     "fs": "^0.0.1-security"
@@ -22,5 +22,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/leontm-dev/spiky"
-  }
+  },
+  "keywords": ["JavaScript", "Python", "SpikePrime"],
+  "licenses": [{"type": "GNU GENERAL PUBLIC LICENSE", "url": "https://github.com/leontm-dev/spiky/blob/add-license-1/LICENSE.md"}]
 }
