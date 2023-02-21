@@ -350,4 +350,104 @@ class App extends Spiky {
         }
     }
 };
-module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker };
+/**
+ * @extends Spiky
+ * @description Following are all of the functions that are linked to the Light Matrix.
+ */
+class LightMatrix extends Spiky {
+    constructor();
+    /**
+     * @description Shows an image on the Light Matrix.
+     * @param {String} image - Name of the image.
+     * @param {Number} [brightness=100] - Brightness of the image from 0-100
+     */
+    show_image(image, brightness) {
+        if (typeof image === String && typeof brightness === Number) {
+            let images = [
+                "ANGRY", "ARROW_E", "ARROW_N", "ARROW_NE", "ARROW_NW", "ARROW_S", "ARROW_SE", "ARROW_SW", "ARROW_W", "ASLEEP",
+                "BUTTERFLY",
+                "CHESSBOARD", "CLOCK1", "CLOCK10", "CLOCK11", "CLOCK12", "CLOCK2", "CLOCK3", "CLOCK4", "CLOCK5", "CLOCK6", "CLOCK7", "CLOCK8", "CLOCK9", "CONFUSED", "COW",
+                "DIAMOND", "DIAMOND_SMALL", "DUCK",
+                "FABULOUS",
+                "GHOST", "GIRAFFE", "GO_RIGHT", "GO_LEFT", "GO_UP", "GO_DOWN",
+                "HAPPY", "HEART", "HEART_SMALL", "HOUSE",
+                "MEH", "MUSIC_CROTCHET", "MUSIC_QUAVER", "MUSIC_QUAVERS",
+                "NO",
+                "PACMAN", "PITCHFORK",
+                "RABBIT", "ROLLERSKATE",
+                "SAD", "SILLY", "SKULL", "SMILE", "SNAKE", "SQUARE", "SQUARE_SMALL", "STICKFIGURE", "SURPRISED", "SWORD",
+                "TARGET", "TORTOISE", "TRIANGLE", "TRIANGLE_LEFT", "TSHIRT",
+                "UMBRELLA",
+                "XMAS",
+                "YES"
+            ];
+            if (images.includes(image)) {
+                fs.readFile(this.filename, (err, data) => {
+                    if (!err) {
+                        let text = String(data);
+                        text = text + `\nhub.light_matrix.show_image(${String(image)}, brightness = ${brightness})`;
+                    } else {
+                        console.log(err);
+                    }
+                })
+            } else {
+                return new Error("ValueError: image is not one of the allowed values.")
+            }
+        } else {
+            return new Error("TypeError: image is not a string or brightness is not an integer.")
+        }
+    };
+    /**
+     * @description Sets the brightness of one pixel (one of the 25 LEDs) on the Light Matrix.
+     * @param {Number} x - Pixel position, counting from the left.
+     * @param {Number} y - Pixel position, counting from the top.
+     * @param {Number} [brightness=100] - Brightness of the pixel
+     */
+    set_pixel(x, y, brightness) {
+        if (typeof x === Number && typeof y === Number && typeof brightness === String) {
+            if (x >= 0 && x <= 4 && y >= 0 && y <= 4) {
+                fs.readFile(this.filename, (err, data) => {
+                    if (!err) {
+                        let text = String(data);
+                        text = text + `\nhub.light_matrix.set_pixel(${x}, ${y}, brightness = ${brightness})`;
+                    } else {
+                        console.log(err);
+                    }
+                });
+            } else {
+                return new Error("ValueError: x, y is not within the allowed range of 0-4.")
+            }
+        } else {
+            return new Error("TypeError: x, y or brightness is not an integer.")
+        }
+    };
+    /**
+     *
+     * @param {String} txt - Text to write.
+     * @description Displays text on the Light Matrix, one letter at a time, scrolling from right to left. Your program will not continue until all of the letters have been shown.
+     */
+    write(txt) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nhub.light_matrix.write(${String(txt)})`;
+            } else {
+                console.log(err);
+            }
+        })
+    };
+    /**
+     * @description Turns off all of the pixels on the Light Matrix.
+     */
+    off() {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nhub.light_matrix.off()`;
+            } else {
+                console.log(err);
+            }
+        })
+    }
+};
+module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix };
