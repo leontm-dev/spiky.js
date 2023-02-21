@@ -450,4 +450,548 @@ class LightMatrix extends Spiky {
         })
     }
 };
-module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix };
+/**
+ * @description The math module provides some basic mathematical functions for working with floating-point numbers.
+ */
+class Math extends Spiky {
+    constructor();
+    /**
+     * @returns Returns the inverse cosine of "x."
+     * @param {Number} x
+     */
+    acos(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nacos(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the inverse hyperbolic cosine of "x."
+     * @param {Number} x
+     */
+    acosh(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nacosh(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the inverse sine of "x."
+     * @param {Number} x
+     */
+    asin(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nasin(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the inverse hyperbolic sine of "x."
+     * @param {Number} x
+     */
+    asinh(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nasinh(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * 
+     * @returns Returns the inverse tangent of "x."
+     * @param {Number} x
+     */
+    atan(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\natan(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the principal value of the inverse tangent of "y/x."
+     * @param {Number} x
+     * @param {Number} y
+     */
+    atan2(y, x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\natan2(${y}, ${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the inverse hyperbolic tangent of "x."
+     * @param {Number} x
+     */
+    atanh(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\natanh(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns an integer ("x" rounded toward positive infinity).
+     * @param {Number} x
+     */
+    ceil(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nceil(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns "x" with the sign of "y."
+     * @param {Number} x
+     * @param {Number} y
+     */
+    copysign(x, y) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ncopysign(${x}, ${y})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns the cosine of "x."
+     * @param {Number} x
+     */
+    cos(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ncos(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns the inverse hyperbolic sine of "x."
+     * @param {Number} x
+     */
+    cosh(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ncosh(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns radians ‘x’ converted to degrees.
+     * @param {Number} x
+     */
+    degrees(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ndegrees(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the error function of "x."
+     * @param {Number} x
+     */
+    erf(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nerf(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the complementary error function of "x."
+     * @param {Number} x
+     */
+    erfc(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nerfc(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the exponential of "x."
+     * @param {Number} x
+     */
+    exp(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nexp(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns exp(x) - 1.
+     * @param {Number} x
+     */
+    expm1(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nexpm1(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the absolute value of "x."
+     * @param {Number} x
+     */
+    fabs(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nfabs(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns an integer ("x" rounded toward negative infinity).
+     * @param {Number} x
+     */
+    floor(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nfloor(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns the remainder of "x/y."
+     * @param {Number} x
+     * @param {Number} y
+     */
+    fmod(x, y) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nfmod(${x}, ${y})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Decomposes a floating-point number into its mantissa and exponent. The Returned value is the tuple (m, e) such that x == m * 2**e exactly. If x == 0, the function Returns (0.0, 0). Otherwise, the relation 0.5 <= abs(m) < 1 holds.
+     * @param {Number} x
+     */
+    frexp(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nfrexp(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the gamma function of "x."
+     * @param {Number} x
+     */
+    gamma(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ngamma(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns "true" if "x" is finite.
+     * @param {Number} x
+     */
+    isfinite(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nisfinite(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns "true" if "x" is infinite.
+     * @param {Number} x
+     */
+    isinf(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nisinf(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns "true" if "x" is not-a-number
+     * @param {Number} x
+     */
+    isnan(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nisnan(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns x * (2**exp).
+     * @param {Number} x
+     * @param {Number} exp
+     */
+    ldexp(x, exp) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nldexp(${x}, ${exp})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the natural logarithm of the gamma function of "x."
+     * @param {Number} x
+     */
+    lgamma(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nlgamme(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns the natural logarithm of "x."
+     * @param {Number} x
+     */
+    log(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nlog(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the base-10 logarithm of "x."
+     * @param {Number} x
+     */
+    log10(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nlog10(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the base-2 logarithm of "x."
+     * @param {Number} x
+     */
+    log2(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nlog2(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns a tuple of two floats (the fractional and integral parts of "x"). Both Returned values have the same sign as "x."
+     * @param {Number} x
+     */
+    modf(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nmodf(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns "x" to the power of "y."
+     * @param {Number} x
+     * @param {Number} y
+     */
+    pow(x, y) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\npow(${x}, ${y})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns "degrees x" converted to radians.
+     * @param {Number} x
+     */
+    radians(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nradians(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the sine of "x."
+     * @param {Number} x
+     */
+    sin(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nsin(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the hyperbolic sine of "x."
+     * @param {Number} x
+     */
+    sinh(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nsinh(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the square root of "x."
+     * @param {Number} x
+     */
+    sqrt(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\nsqrt(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+    /**
+     * @returns Returns the tangent of "x."
+     * @param {Number} x
+     */
+    tan(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ntan(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns the hyperbolic tangent of "x."
+     * @param {Number} x
+     */
+    tanh(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ntanh(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @returns Returns an integer ("x" rounded toward "0").
+     * @param {Number} x
+     */
+    trunc(x) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\ntrunc(${x})`;
+            } else {
+                console.log(err);
+            }
+        });
+    };
+}
+module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math };
