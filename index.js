@@ -451,6 +451,7 @@ class LightMatrix extends Spiky {
     }
 };
 /**
+ * @extends Spiky
  * @description The math module provides some basic mathematical functions for working with floating-point numbers.
  */
 class Math extends Spiky {
@@ -994,4 +995,64 @@ class Math extends Spiky {
         });
     };
 }
-module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math };
+/**
+ * @extends Spiky
+ * @description To use the Color Sensor, you must first initialize it.
+ */
+class ColorSensor extends Spiky {
+    /**
+     *
+     * @param {String} name
+     * @param {String} port
+     */
+    constructor(name, port) {
+        this.name = name;
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = text + `\n${this.name} = ColorSensor(${String(port).toUpperCase()})`;
+            } else {
+                console.log(err);
+            }
+        });
+    }
+    /**
+     * @description Lights up all of the lights on the Color Sensor at the specified brightness. This causes the Color Sensor to change modes, which can affect your program in unexpected ways. For example, the Color Sensor can't read colors when it's in light up mode.
+     * @param {Number} [brightness=100%] - The desired brightness of the lights on the Color Sensor.
+     */
+    light_up_all(brightness) {
+        if (typeof brightness === Number) {
+            fs.readFile(this.filename, (err, data) => {
+                if (!err) {
+                    let text = String(data);
+                    text = text + `\n${this.name}.light_up_all(${brightness})`;
+                } else {
+                    console.log(err);
+                }
+            });
+        } else {
+            return new Error("TypeError: brightness is not an integer.");
+        }
+    };
+    /**
+     * @description Sets the brightness of the individual lights on the Color Sensor. This causes the Color Sensor to change modes, which can affect your program in unexpected ways. For example, the Color Sensor can't read colors when it's in light up mode.
+     * @param {Number} light_1 - The desired brightness of light 1.
+     * @param {Number} light_2 - The desired brightness of light 2.
+     * @param {Number} light_3 - The desired brightness of light 3.
+     */
+    light_up(light_1, light_2, light_3) {
+        if (typeof light_1 === Number && typeof light_2 === Number && typeof light_3 === Number) {
+            fs.readFile(this.filename, (err, data) => {
+                if (!err) {
+                    let text = String(data);
+                    text = text + `\n${this.name}.light_up(${light_1}, ${light_2}, ${light_3})`;
+                } else {
+                    console.log(err);
+                }
+            });
+        } else {
+            return new Error("TypeError: light_1, light_2, or light_3 is not an integer.")
+        }
+    }
+};
+module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math, ColorSensor };
