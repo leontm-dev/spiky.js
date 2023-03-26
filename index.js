@@ -1055,4 +1055,23 @@ class ColorSensor extends Spiky {
         }
     }
 };
-module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math, ColorSensor };
+class Code extends Spiky {
+    constructor();
+    /**
+     * 
+     * @param {String} code - Write custom python code to fullfil your dreams!
+     */
+    custom(code) {
+        if (code != "") {
+            fs.readFile(this.filename, (err, data) => {
+                if (!err) {
+                    let text = String(data);
+                    text = text + `${code}`;
+                } else {
+                    console.log(err);
+                }
+            });
+        }
+    }
+};
+module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math, ColorSensor, Code };
