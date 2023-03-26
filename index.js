@@ -15,45 +15,6 @@ class Spiky {
      * @returns Returns the current file
      */
     filename = this.filename
-    /**
-     *
-     * @param {String} value
-     */
-    print(value) {
-        fs.readFile(this.filename, (err, data) => {
-            if (!err) {
-                let text = String(data);
-                text = String(text + `\nprint(${value})`);
-                fs.writeFile(this.filename, text, (err) => {
-                    if (!err) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                })
-            } else {
-                console.log(err);
-            }
-        })
-    };
-    /**
-    *
-    * @param {Number} time - Wait for x seconds
-    */
-    wait(time) {
-        if (typeof time === Number) {
-            fs.readFile(this.filename, (err, data) => {
-                if (!err) {
-                    let text = String(data);
-                    text = text + `\nwait_for_seconds(${time})`
-                } else {
-                    console.log(err);
-                }
-            })
-        } else {
-            return new Error("TypeError: time must be a number!")
-        }
-    }
 };
 /**
  * @extends Spiky
@@ -1071,6 +1032,56 @@ class Code extends Spiky {
                     console.log(err);
                 }
             });
+        }
+    }
+    /**
+     * 
+     * @param {Array} options 
+     */
+    if(options) {
+        if (typeof options === Array) {
+            if (typeof options[0] === Object && typeof options[1] === Object && typeof options[2] === Object) {
+
+            } else {
+                new Error("TypeError: Options[0] & Options[1] & Options[2] must be objects!");
+            }
+        } else {
+            new Error("TypeError: Options must be an array!");
+        }
+    }
+    print(value) {
+        fs.readFile(this.filename, (err, data) => {
+            if (!err) {
+                let text = String(data);
+                text = String(text + `\nprint(${value})`);
+                fs.writeFile(this.filename, text, (err) => {
+                    if (!err) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
+            } else {
+                console.log(err);
+            }
+        })
+    };
+    /**
+    *
+    * @param {Number} time - Wait for x seconds
+    */
+    wait(time) {
+        if (typeof time === Number) {
+            fs.readFile(this.filename, (err, data) => {
+                if (!err) {
+                    let text = String(data);
+                    text = text + `\nwait_for_seconds(${time})`
+                } else {
+                    console.log(err);
+                }
+            })
+        } else {
+            return new Error("TypeError: time must be a number!")
         }
     }
 };
