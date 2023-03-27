@@ -1052,6 +1052,8 @@ class Code extends Spiky {
                     console.log(err);
                 }
             });
+        } else {
+            new Error("ValueError: code is not defined!");
         }
     }
     /**
@@ -1106,3 +1108,7 @@ class Code extends Spiky {
     }
 };
 module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math, ColorSensor, Code };
+
+let math = new Math();
+math.asin(2)
+
