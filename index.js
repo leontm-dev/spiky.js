@@ -2,7 +2,7 @@ const fs = require("fs");
 class Spiky {
     /**
      * 
-     * @param {String} filename 
+     * @param {String} filename
      * @returns Returns the created file with correct ending as a string
      */
     constructor (filename) {
@@ -112,7 +112,6 @@ class Timer extends Spiky {
  * @description Following are all of the functions that are linked to the Hub’s programmable Brick Status Light.
  */
 class StatusLight extends Spiky {
-    constructor();
     /**
      *
      * @param {String} color -  The color which the status light should display
@@ -143,7 +142,6 @@ class StatusLight extends Spiky {
  * @description Following are all of the functions that are linked to sounds coming out of the Hub.
  */
 class Speaker extends Spiky {
-    constructor();
     /**
      *
      * @param {Number} [note=60]- The MIDI note number.
@@ -336,7 +334,6 @@ class App extends Spiky {
  * @description Following are all of the functions that are linked to the Light Matrix.
  */
 class LightMatrix extends Spiky {
-    constructor();
     /**
      * @description Shows an image on the Light Matrix.
      * @param {String} image - Name of the image.
@@ -436,7 +433,6 @@ class LightMatrix extends Spiky {
  * @description The math module provides some basic mathematical functions for working with floating-point numbers.
  */
 class Math extends Spiky {
-    constructor();
     /**
      * @returns Returns the inverse cosine of "x."
      * @param {Number} x
@@ -1036,8 +1032,27 @@ class ColorSensor extends Spiky {
         }
     }
 };
+class Wait extends Spiky {
+    /**
+    *
+    * @param {Number} time - Wait for x seconds
+    */
+    wait_for_seconds(time) {
+        if (typeof time === Number) {
+            fs.readFile(this.filename, (err, data) => {
+                if (!err) {
+                    let text = String(data);
+                    text = text + `\nwait_for_seconds(${time})`
+                } else {
+                    console.log(err);
+                }
+            })
+        } else {
+            return new Error("TypeError: time must be a number!")
+        }
+    }
+}
 class Code extends Spiky {
-    constructor();
     /**
      * 
      * @param {String} code - Write custom python code to fullfil your dreams!
@@ -1088,27 +1103,5 @@ class Code extends Spiky {
             }
         })
     };
-    /**
-    *
-    * @param {Number} time - Wait for x seconds
-    */
-    wait(time) {
-        if (typeof time === Number) {
-            fs.readFile(this.filename, (err, data) => {
-                if (!err) {
-                    let text = String(data);
-                    text = text + `\nwait_for_seconds(${time})`
-                } else {
-                    console.log(err);
-                }
-            })
-        } else {
-            return new Error("TypeError: time must be a number!")
-        }
-    }
 };
-module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math, ColorSensor, Code };
-
-let math = new Math();
-math.asin(2)
-
+module.exports = { Spiky, MotorPair, Timer, StatusLight, Speaker, App, LightMatrix, Math, ColorSensor, Wait, Code };
