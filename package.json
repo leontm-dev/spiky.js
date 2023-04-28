@@ -1,6 +1,6 @@
 {
   "name": "spiky.js",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "This is a package, in which you can write JS to code with the Spike Prime",
   "main": "index.js",
   "scripts": {
@@ -30,4 +30,3 @@
   "keywords": ["JavaScript", "Python", "SpikePrime"],
   "licenses": [{"type": "GNU GENERAL PUBLIC LICENSE", "url": "https://github.com/leontm-dev/spiky/blob/add-license-1/LICENSE.md"}]
 }
-LAnneken09
