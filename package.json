@@ -4,7 +4,7 @@
   "description": "This is a package, in which you can write JS to code with the Spike Prime",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js"
   },
   "author": "LeonTM <leontm.dev@gmail.com> (https://me.leontm-official.repl.co)",
   "license": "ISC",
