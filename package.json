@@ -1,6 +1,6 @@
 {
   "name": "spiky.js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "This is a package, in which you can write JS to code with the Spike Prime",
   "main": "index.js",
   "scripts": {
