@@ -12,8 +12,7 @@
     "fs": "^0.0.1-security"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "tag": ""
+    "registry": ["https://npm.pkg.github.com", "https://npmjs.com"]
   },
   "funding": {
     "type": "BuyMeACoffee",
