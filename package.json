@@ -12,7 +12,8 @@
     "fs": "^0.0.1-security"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@leontm-dev"
+    "registry": "https://npm.pkg.github.com",
+    "tag": ""
   },
   "funding": {
     "type": "BuyMeACoffee",
@@ -29,3 +30,4 @@
   "keywords": ["JavaScript", "Python", "SpikePrime"],
   "licenses": [{"type": "GNU GENERAL PUBLIC LICENSE", "url": "https://github.com/leontm-dev/spiky/blob/add-license-1/LICENSE.md"}]
 }
+LAnneken09
