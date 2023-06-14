@@ -1469,4 +1469,12 @@ class Code extends Spiky {
   while();
 }
 export default Spiky;
-export { Speaker, Code, MotorPair, wait_for_seconds, wait_until };
+export {
+  Speaker,
+  Code,
+  MotorPair,
+  wait_for_seconds,
+  wait_until,
+  MathExpression,
+  LightMatrix,
+};
