@@ -1,4 +1,9 @@
 import * as fs from "fs-extra";
+interface whileConditions {
+  first: Number | String | MotorPair;
+  condition: String;
+  second: Number | String | MotorPair | StatusLight | Math;
+}
 class Spiky {
   /**
    *
@@ -14,9 +19,7 @@ class Spiky {
   /**
    * @returns Returns the current file
    */
-  compile() {
-    fs.writeFile;
-  }
+  compile() {}
 }
 /**
  * @extends Spiky
@@ -812,7 +815,7 @@ class LightMatrix extends Spiky {
  * @extends Spiky
  * @description The math module provides some basic mathematical functions for working with floating-point numbers.
  */
-class Math extends Spiky {
+class MathExpression extends Spiky {
   /**
    * @returns Returns the inverse cosine of "x."
    * @param {Number} x
@@ -826,6 +829,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.acos(x);
   }
   /**
    * @returns Returns the inverse hyperbolic cosine of "x."
@@ -840,6 +844,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.acosh(x);
   }
   /**
    * @returns Returns the inverse sine of "x."
@@ -854,6 +859,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.asin(x);
   }
   /**
    * @returns Returns the inverse hyperbolic sine of "x."
@@ -868,6 +874,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.asinh(x);
   }
   /**
    *
@@ -883,6 +890,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.atan(x);
   }
   /**
    * @returns Returns the principal value of the inverse tangent of "y/x."
@@ -898,6 +906,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.atan2(x);
   }
   /**
    * @returns Returns the inverse hyperbolic tangent of "x."
@@ -912,6 +921,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.atanh(x);
   }
   /**
    * @returns Returns an integer ("x" rounded toward positive infinity).
@@ -926,6 +936,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.ceil(x);
   }
   /**
    * @returns Returns "x" with the sign of "y."
@@ -955,6 +966,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.cos(x);
   }
   /**
    * @returns Returns the inverse hyperbolic sine of "x."
@@ -969,6 +981,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return Math.cosh(x);
   }
   /**
    * @returns Returns radians ‘x’ converted to degrees.
@@ -983,6 +996,7 @@ class Math extends Spiky {
         console.log(err);
       }
     });
+    return (x * 180) / Math.PI;
   }
   /**
    * @returns Returns the error function of "x."
@@ -1452,6 +1466,7 @@ class Code extends Spiky {
       new Error("ValueError: code is not defined!");
     }
   }
+  while();
 }
 export default Spiky;
 export { Speaker, Code, MotorPair, wait_for_seconds, wait_until };
