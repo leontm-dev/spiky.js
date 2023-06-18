@@ -815,7 +815,7 @@ class LightMatrix extends Spiky {
  * @extends Spiky
  * @description The math module provides some basic mathematical functions for working with floating-point numbers.
  */
-class MathExpression extends Spiky {
+class MathematicalFunctions extends Spiky {
   /**
    * @returns Returns the inverse cosine of "x."
    * @param {Number} x
@@ -906,7 +906,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
-    return Math.atan2(x);
+    return Math.atan2(y, x);
   }
   /**
    * @returns Returns the inverse hyperbolic tangent of "x."
@@ -1011,6 +1011,32 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    // Constants
+    const a1 = 0.254829592;
+    const a2 = -0.284496736;
+    const a3 = 1.421413741;
+    const a4 = -1.453152027;
+    const a5 = 1.061405429;
+    const p = 0.3275911;
+
+    // Sign of x
+    const sign = x >= 0 ? 1 : -1;
+
+    // Absolute value of x
+    const absX = Math.abs(x);
+
+    // Calculate t
+    const t = 1.0 / (1.0 + p * absX);
+
+    // Approximation using the approximation formula
+    const erfApproximation =
+      sign *
+      (1 -
+        ((((a5 * t + a4) * t + a3) * t + a2) * t + a1) *
+          t *
+          Math.exp(-absX * absX));
+
+    return erfApproximation;
   }
   /**
    * @returns Returns the complementary error function of "x."
@@ -1025,6 +1051,30 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    // Constants
+    const a1 = 0.254829592;
+    const a2 = -0.284496736;
+    const a3 = 1.421413741;
+    const a4 = -1.453152027;
+    const a5 = 1.061405429;
+    const p = 0.3275911;
+
+    // Absolute value of x
+    const absX = Math.abs(x);
+
+    // Calculate t
+    const t = 1.0 / (1.0 + p * absX);
+
+    // Approximation using the approximation formula
+    const erfcApproximation =
+      ((((a5 * t + a4) * t + a3) * t + a2) * t + a1) *
+      t *
+      Math.exp(-absX * absX);
+
+    // Complementary value
+    const erfcValue = 1 - erfcApproximation;
+
+    return erfcValue;
   }
   /**
    * @returns Returns the exponential of "x."
@@ -1039,6 +1089,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.exp(x);
   }
   /**
    * @returns Returns exp(x) - 1.
@@ -1053,6 +1104,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.expm1(x);
   }
   /**
    * @returns Returns the absolute value of "x."
@@ -1067,6 +1119,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.abs(x);
   }
   /**
    * @returns Returns an integer ("x" rounded toward negative infinity).
@@ -1081,6 +1134,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.floor(x);
   }
   /**
    * @returns Returns the remainder of "x/y."
@@ -1096,6 +1150,8 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    const remainder = x % y;
+    return remainder;
   }
   /**
    * @returns Decomposes a floating-point number into its mantissa and exponent. The Returned value is the tuple (m, e) such that x == m * 2**e exactly. If x == 0, the function Returns (0.0, 0). Otherwise, the relation 0.5 <= abs(m) < 1 holds.
@@ -1110,6 +1166,16 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    if (x === 0) {
+      return [0.0, 0];
+    }
+
+    const sign = Math.sign(x);
+    const absX = Math.abs(x);
+    const exponent = Math.floor(Math.log2(absX));
+    const mantissa = absX / Math.pow(2, exponent);
+
+    return [sign * mantissa, exponent];
   }
   /**
    * @returns Returns the gamma function of "x."
@@ -1124,6 +1190,35 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    // Coefficients for the Lanczos approximation
+    function gamma(x: number) {
+      // Coefficients for the Lanczos approximation
+      const lanczosCoefficients = [
+        0.99999999999980993, 676.5203681218851, -1259.1392167224028,
+        771.32342877765313, -176.61502916214059, 12.507343278686905,
+        -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7,
+      ];
+
+      if (x <= 0) {
+        // Use the reflection formula for negative values and non-integers
+        return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));
+      }
+
+      // Implementation of the Lanczos approximation
+      let g = 7;
+      let a = lanczosCoefficients[0];
+      for (let i = 1; i < lanczosCoefficients.length; i++) {
+        a += lanczosCoefficients[i] / (x + i);
+      }
+
+      return (
+        Math.sqrt(2 * Math.PI) *
+        Math.pow(x + g + 0.5, x + 0.5) *
+        Math.exp(-(x + g + 0.5)) *
+        a
+      );
+    }
+    return gamma(x);
   }
   /**
    * @returns Returns "true" if "x" is finite.
@@ -1138,6 +1233,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return isFinite(x);
   }
   /**
    * @returns Returns "true" if "x" is infinite.
@@ -1152,6 +1248,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return !isFinite(x);
   }
   /**
    * @returns Returns "true" if "x" is not-a-number
@@ -1166,6 +1263,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return isNaN(x);
   }
   /**
    * @returns Returns x * (2**exp).
@@ -1181,6 +1279,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return x * Math.pow(2, exp);
   }
   /**
    * @returns Returns the natural logarithm of the gamma function of "x."
@@ -1195,6 +1294,34 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    function gamma(x: number) {
+      // Coefficients for the Lanczos approximation
+      const lanczosCoefficients = [
+        0.99999999999980993, 676.5203681218851, -1259.1392167224028,
+        771.32342877765313, -176.61502916214059, 12.507343278686905,
+        -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7,
+      ];
+
+      if (x <= 0) {
+        // Use the reflection formula for negative values and non-integers
+        return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));
+      }
+
+      // Implementation of the Lanczos approximation
+      let g = 7;
+      let a = lanczosCoefficients[0];
+      for (let i = 1; i < lanczosCoefficients.length; i++) {
+        a += lanczosCoefficients[i] / (x + i);
+      }
+
+      return (
+        Math.sqrt(2 * Math.PI) *
+        Math.pow(x + g + 0.5, x + 0.5) *
+        Math.exp(-(x + g + 0.5)) *
+        a
+      );
+    }
+    return Math.log(gamma(x));
   }
   /**
    * @returns Returns the natural logarithm of "x."
@@ -1209,6 +1336,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.log(x);
   }
   /**
    * @returns Returns the base-10 logarithm of "x."
@@ -1223,6 +1351,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.log10(x);
   }
   /**
    * @returns Returns the base-2 logarithm of "x."
@@ -1237,6 +1366,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.log2(x);
   }
   /**
    * @returns Returns a tuple of two floats (the fractional and integral parts of "x"). Both Returned values have the same sign as "x."
@@ -1251,6 +1381,9 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    const integralPart = Math.floor(x);
+    const fractionalPart = x - integralPart;
+    return [fractionalPart, integralPart];
   }
   /**
    * @returns Returns "x" to the power of "y."
@@ -1266,6 +1399,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.pow(x, y);
   }
   /**
    * @returns Returns "degrees x" converted to radians.
@@ -1280,6 +1414,8 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    const radians = x * (Math.PI / 180);
+    return radians;
   }
   /**
    * @returns Returns the sine of "x."
@@ -1294,6 +1430,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.sin(x);
   }
   /**
    * @returns Returns the hyperbolic sine of "x."
@@ -1308,6 +1445,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.sinh(x);
   }
   /**
    * @returns Returns the square root of "x."
@@ -1322,6 +1460,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.sqrt(x);
   }
   /**
    * @returns Returns the tangent of "x."
@@ -1336,6 +1475,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.tan(x);
   }
   /**
    * @returns Returns the hyperbolic tangent of "x."
@@ -1350,6 +1490,7 @@ class MathExpression extends Spiky {
         console.log(err);
       }
     });
+    return Math.tanh(x);
   }
   /**
    * @returns Returns an integer ("x" rounded toward "0").
@@ -1466,7 +1607,6 @@ class Code extends Spiky {
       new Error("ValueError: code is not defined!");
     }
   }
-  while();
 }
 export default Spiky;
 export {
@@ -1475,6 +1615,6 @@ export {
   MotorPair,
   wait_for_seconds,
   wait_until,
-  MathExpression,
+  MathematicalFunctions,
   LightMatrix,
 };
