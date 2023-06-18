@@ -4,6 +4,24 @@ interface whileConditions {
   condition: String;
   second: Number | String | MotorPair | StatusLight | Math;
 }
+interface ifConditions {
+  first:
+    | Number
+    | String
+    | number[]
+    | Object
+    | string[]
+    | Boolean
+    | MotorPair
+    | LightMatrix
+    | Timer
+    | StatusLight;
+  condition: String;
+  second: Number | String | number[] | Object | string[] | Boolean;
+}
+type StatusLightState = true | false;
+type MotorMovingState = true | false;
+type ButtonPressed = true | false;
 class Spiky {
   /**
    *
@@ -23,212 +41,9 @@ class Spiky {
 }
 /**
  * @extends Spiky
- * @description MotorPair objects are used to control 2 motors simultaneously in opposite directions. To be able to use MotorPair, you must initialize both motors.
- */
-class MotorPair extends Spiky {
-  /**
-   *
-   * @param {String} name - The name of the MotorPair
-   * @param {String} motor1 - The port name of the first motor
-   * @param {String} motor2 - The port name of the second motor
-   */
-  constructor(name: string, motor1: string, motor2: string) {
-    super(name);
-    this.name = name;
-    if (motor1 != undefined && motor2 != undefined) {
-      fs.readFile(this.filename, (err, data) => {
-        if (!err) {
-          let text = String(data);
-          text =
-            text +
-            `\n${this.name} = MotorPair(${String(motor1)}, ${String(motor2)})`;
-        } else {
-          console.log(err);
-        }
-      });
-    }
-  }
-  /**
-   *
-   * @param {Object} motors - The MotorPair that should move
-   * @param {String} motors.motor1 - The port of the first motor of the pair
-   * @param {String} motors.motor2 - The port of the second motor of the pair
-   * @param {Number} amount - The quantity to move in relation to the specified unit of measurement.
-   * @param {String} unit - The unit of measurement specified for the "amount" parameter.
-   * @param {Number} steering - The direction and quantity to steer the Driving Base.
-   * @param {Number} speed - The motor speed.
-   */
-  move(amount: number, unit: string, steering: number, speed: number) {
-    if (
-      unit === "cm" ||
-      unit === "rotations" ||
-      unit === "in" ||
-      unit === "degrees" ||
-      unit === "seconds"
-    ) {
-      if (steering == undefined) {
-        steering = 0;
-      }
-      if (speed == undefined) {
-        speed = 50;
-      }
-      fs.readFile(this.filename, (err, data) => {
-        if (!err) {
-          let text = String(data);
-          text =
-            text +
-            `\n${this.name}.move(${amount}, ${unit}, ${steering}, ${speed})`;
-        } else {
-          console.log(err);
-        }
-      });
-    } else {
-      return new Error("ValueError: unit is not one of the allowed values.");
-    }
-  }
-}
-/**
- * @extends Spiky
- */
-class Timer extends Spiky {
-  /**
-   *
-   * @param {String} name - Name of the variable which sets the timer
-   */
-  constructor(name: string) {
-    super(name);
-    this.name = name;
-    fs.readFile(this.filename, (err, data) => {
-      if (!err) {
-        let text = String(data);
-        text = text + `\n${this.name} = Timer()`;
-      } else {
-        console.log(err);
-      }
-    });
-  }
-  reset() {
-    fs.readFile(this.filename, (err, data) => {
-      if (!err) {
-        let text = String(data);
-        text = text + `\n${this.name}.reset()`;
-      } else {
-        console.log(err);
-      }
-    });
-  }
-}
-/**
- * @extends Spiky
- * @description Following are all of the functions that are linked to the Hub’s programmable Brick Status Light.
- */
-class StatusLight extends Spiky {
-  /**
-   *
-   * @param {String} color -  The color which the status light should display
-   */
-  on(color: string) {
-    fs.readFile(this.filename, (err, data) => {
-      if (!err) {
-        let text = String(data);
-        text = text + `\nhub.status_light.on(${String(color.toLowerCase())})`;
-      } else {
-        console.log(err);
-      }
-    });
-  }
-  off() {
-    fs.readFile(this.filename, (err, data) => {
-      if (!err) {
-        let text = String(data);
-        text = text + `\n$hub.status_light.off()`;
-      } else {
-        console.log(err);
-      }
-    });
-  }
-}
-/**
- * @extends Spiky
- * @description Following are all of the functions that are linked to sounds coming out of the Hub.
- */
-class Speaker extends Spiky {
-  /**
-   *
-   * @param {Number} [note=60]- The MIDI note number.
-   * @param {Number} [seconds=0.2] - The duration of the beep, specified in seconds.
-   * @description Plays a beep on the Hub. Your program will not continue until seconds have passed.
-   */
-  beep(note: number, seconds: number) {
-    if (note >= 44 && note <= 123) {
-      fs.readFile(this.filename, (err, data) => {
-        if (!err) {
-          let text = String(data);
-          text = text + `\nhub.speaker.beep(${note}, ${seconds})`;
-        } else {
-          console.log(err);
-        }
-      });
-    } else {
-      return new Error(
-        "ValueError: note is not within the allowed range of 44-123."
-      );
-    }
-  }
-  /**
-   *
-   * @param {Number} [note=60] - The MIDI note number.
-   * @description Starts playing a beep. The beep will play indefinitely until stop() or another beep method is called.
-   */
-  start_beep(note: number) {
-    if (note >= 44 && note <= 123) {
-      fs.readFile(this.filename, (err, data) => {
-        if (!err) {
-          let text = String(data);
-          text = text + `\nhub.speaker.start_beep(${note})`;
-        } else {
-          console.log(err);
-        }
-      });
-    } else {
-      return new Error(
-        "ValueError: note is not within the allowed range of 44-123"
-      );
-    }
-  }
-  /**
-   * @description Stops any sound that is playing.
-   */
-  stop() {
-    fs.readFile(this.filename, (err, data) => {
-      if (!err) {
-        let text = String(data);
-        text = text + `\nhub.speaker.stop()`;
-      } else {
-        console.log(err);
-      }
-    });
-  }
-  /**
-   *
-   * @param {Number} [volume=100%] - The new volume percentage.
-   * @description Sets the speaker volume. If the assigned volume is out of range, the nearest volume (i.e., 0 or 100) will be used instead. This only sets the volume of the Hub, not the programming app.
-   */
-  set_volume(volume: number) {
-    fs.readFile(this.filename, (err, data) => {
-      if (!err) {
-        let text = String(data);
-        text = text + `\nhub.speaker.set_volume(${volume})`;
-      } else {
-        console.log(err);
-      }
-    });
-  }
-}
-/**
- * @extends Spiky
  * @description To use the app, you must first initialize it.
  */
+
 class App extends Spiky {
   /**
    *
@@ -661,6 +476,212 @@ class App extends Spiky {
     }
   }
 }
+class Buttons extends Spiky {}
+/**
+ * @extends Spiky
+ * @description MotorPair objects are used to control 2 motors simultaneously in opposite directions. To be able to use MotorPair, you must initialize both motors.
+ */
+class MotorPair extends Spiky {
+  /**
+   *
+   * @param {String} name - The name of the MotorPair
+   * @param {String} motor1 - The port name of the first motor
+   * @param {String} motor2 - The port name of the second motor
+   */
+  constructor(name: string, motor1: string, motor2: string) {
+    super(name);
+    this.name = name;
+    if (motor1 != undefined && motor2 != undefined) {
+      fs.readFile(this.filename, (err, data) => {
+        if (!err) {
+          let text = String(data);
+          text =
+            text +
+            `\n${this.name} = MotorPair(${String(motor1)}, ${String(motor2)})`;
+        } else {
+          console.log(err);
+        }
+      });
+    }
+  }
+  /**
+   *
+   * @param {Object} motors - The MotorPair that should move
+   * @param {String} motors.motor1 - The port of the first motor of the pair
+   * @param {String} motors.motor2 - The port of the second motor of the pair
+   * @param {Number} amount - The quantity to move in relation to the specified unit of measurement.
+   * @param {String} unit - The unit of measurement specified for the "amount" parameter.
+   * @param {Number} steering - The direction and quantity to steer the Driving Base.
+   * @param {Number} speed - The motor speed.
+   */
+  move(amount: number, unit: string, steering: number, speed: number) {
+    if (
+      unit === "cm" ||
+      unit === "rotations" ||
+      unit === "in" ||
+      unit === "degrees" ||
+      unit === "seconds"
+    ) {
+      if (steering == undefined) {
+        steering = 0;
+      }
+      if (speed == undefined) {
+        speed = 50;
+      }
+      fs.readFile(this.filename, (err, data) => {
+        if (!err) {
+          let text = String(data);
+          text =
+            text +
+            `\n${this.name}.move(${amount}, ${unit}, ${steering}, ${speed})`;
+        } else {
+          console.log(err);
+        }
+      });
+    } else {
+      return new Error("ValueError: unit is not one of the allowed values.");
+    }
+  }
+}
+/**
+ * @extends Spiky
+ */
+class Timer extends Spiky {
+  /**
+   *
+   * @param {String} name - Name of the variable which sets the timer
+   */
+  constructor(name: string) {
+    super(name);
+    this.name = name;
+    fs.readFile(this.filename, (err, data) => {
+      if (!err) {
+        let text = String(data);
+        text = text + `\n${this.name} = Timer()`;
+      } else {
+        console.log(err);
+      }
+    });
+  }
+  reset() {
+    fs.readFile(this.filename, (err, data) => {
+      if (!err) {
+        let text = String(data);
+        text = text + `\n${this.name}.reset()`;
+      } else {
+        console.log(err);
+      }
+    });
+  }
+}
+/**
+ * @extends Spiky
+ * @description Following are all of the functions that are linked to the Hub’s programmable Brick Status Light.
+ */
+class StatusLight extends Spiky {
+  /**
+   *
+   * @param {String} color -  The color which the status light should display
+   */
+  on(color: string) {
+    fs.readFile(this.filename, (err, data) => {
+      if (!err) {
+        let text = String(data);
+        text = text + `\nhub.status_light.on(${String(color.toLowerCase())})`;
+      } else {
+        console.log(err);
+      }
+    });
+  }
+  off() {
+    fs.readFile(this.filename, (err, data) => {
+      if (!err) {
+        let text = String(data);
+        text = text + `\n$hub.status_light.off()`;
+      } else {
+        console.log(err);
+      }
+    });
+  }
+}
+/**
+ * @extends Spiky
+ * @description Following are all of the functions that are linked to sounds coming out of the Hub.
+ */
+class Speaker extends Spiky {
+  /**
+   *
+   * @param {Number} [note=60]- The MIDI note number.
+   * @param {Number} [seconds=0.2] - The duration of the beep, specified in seconds.
+   * @description Plays a beep on the Hub. Your program will not continue until seconds have passed.
+   */
+  beep(note: number, seconds: number) {
+    if (note >= 44 && note <= 123) {
+      fs.readFile(this.filename, (err, data) => {
+        if (!err) {
+          let text = String(data);
+          text = text + `\nhub.speaker.beep(${note}, ${seconds})`;
+        } else {
+          console.log(err);
+        }
+      });
+    } else {
+      return new Error(
+        "ValueError: note is not within the allowed range of 44-123."
+      );
+    }
+  }
+  /**
+   *
+   * @param {Number} [note=60] - The MIDI note number.
+   * @description Starts playing a beep. The beep will play indefinitely until stop() or another beep method is called.
+   */
+  start_beep(note: number) {
+    if (note >= 44 && note <= 123) {
+      fs.readFile(this.filename, (err, data) => {
+        if (!err) {
+          let text = String(data);
+          text = text + `\nhub.speaker.start_beep(${note})`;
+        } else {
+          console.log(err);
+        }
+      });
+    } else {
+      return new Error(
+        "ValueError: note is not within the allowed range of 44-123"
+      );
+    }
+  }
+  /**
+   * @description Stops any sound that is playing.
+   */
+  stop() {
+    fs.readFile(this.filename, (err, data) => {
+      if (!err) {
+        let text = String(data);
+        text = text + `\nhub.speaker.stop()`;
+      } else {
+        console.log(err);
+      }
+    });
+  }
+  /**
+   *
+   * @param {Number} [volume=100%] - The new volume percentage.
+   * @description Sets the speaker volume. If the assigned volume is out of range, the nearest volume (i.e., 0 or 100) will be used instead. This only sets the volume of the Hub, not the programming app.
+   */
+  set_volume(volume: number) {
+    fs.readFile(this.filename, (err, data) => {
+      if (!err) {
+        let text = String(data);
+        text = text + `\nhub.speaker.set_volume(${volume})`;
+      } else {
+        console.log(err);
+      }
+    });
+  }
+}
+
 /**
  * @extends Spiky
  * @description Following are all of the functions that are linked to the Light Matrix.
@@ -1607,11 +1628,21 @@ class Code extends Spiky {
       new Error("ValueError: code is not defined!");
     }
   }
+  if() {}
 }
 export default Spiky;
 export {
-  Speaker,
+  App,
+  ColorSensor,
+  Wait,
   Code,
+  Speaker,
+  Buttons,
+  ButtonPressed,
+  ifConditions,
+  whileConditions,
+  StatusLightState,
+  MotorMovingState,
   MotorPair,
   wait_for_seconds,
   wait_until,
