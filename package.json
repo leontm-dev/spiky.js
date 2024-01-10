@@ -1,43 +1,16 @@
 {
   "name": "spiky.js",
-  "version": "0.1.7",
-  "description": "This is a package, in which you can write JS to code with the Spike Prime",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "node index.ts",
-    "build": "tsc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "LeonTM <leontm.dev@gmail.com> (https://me.leontm-official.repl.co)",
-  "dependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "fs": "^0.0.1-security",
-    "fs-extra": "^11.1.1"
-  },
-  "funding": {
-    "type": "BuyMeACoffee",
-    "url": "https://www.buymeacoffee.com/leontm"
-  },
-  "readme": "https://github.com/leontm-dev/spiky/blob/master/readme.md",
-  "directories": {
-    "doc": "https://spiky-js.gitbook.io/docs/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/leontm-dev/spiky.js"
-  },
-  "keywords": [
-    "JavaScript",
-    "Python",
-    "SpikePrime"
-  ],
-  "licenses": [
-    {
-      "type": "GNU GENERAL PUBLIC LICENSE",
-      "url": "https://github.com/leontm-dev/spiky/blob/add-license-1/LICENSE.md"
-    }
-  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.10.8",
     "typescript": "^5.0.4"
   }
 }
