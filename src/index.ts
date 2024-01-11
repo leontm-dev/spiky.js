@@ -22,18 +22,17 @@ interface ifConditions {
 type StatusLightState = true | false;
 type MotorMovingState = true | false;
 type ButtonPressed = true | false;
-class Spiky {
+export class Spiky {
   /**
    *
    * @param {String} filename
    * @returns Returns the created file with correct ending as a string
    */
-  filename: string;
+  filename: "toBeExported.py";
   name: string;
-  constructor(filename: string) {
-    this.filename = `${filename}.py`;
-    this.name = "";
-  }
+constructor() {
+  this.filename = "toBeExported.py";
+}
   /**
    * @returns Returns the current file
    */
