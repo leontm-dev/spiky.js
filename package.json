@@ -1,14 +1,23 @@
 {
   "name": "spiky.js",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.6",
+  "description": "This is a npm package for all the people that want to code their Spike Prime Robot with JavaScript. With this package you can convert JavaScript code to Python which can run on the robot. This package is still in development so there can be some bugs. If you find a bug please report it on the GitHub page. We are not connected to Lego® or the Spike Prime.",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "convert": "node dist/index.js",
+    "build": "tsc build && yarn"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/leontm-dev/spiky.js/blob/main/LICENSE.md"
+  },
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://www.buymeacoffee.com/leontm"
+  },
+  "displayName": "spiky.js",
   "devDependencies": {
     "@types/node": "^20.10.8",
     "typescript": "^5.0.4"
