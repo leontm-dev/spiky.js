@@ -1,6 +1,6 @@
 {
   "name": "spiky.js",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "This is a npm package for all the people that want to code their Spike Prime Robot with JavaScript. With this package you can convert JavaScript code to Python which can run on the robot. This package is still in development so there can be some bugs. If you find a bug please report it on the GitHub page. We are not connected to Lego® or the Spike Prime.",
   "main": "dist/index.js",
   "scripts": {
