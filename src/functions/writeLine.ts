@@ -1,4 +1,4 @@
-import Spiky from "..";
+import { Spiky } from "..";
 
 export function writeLine(
   line: string,

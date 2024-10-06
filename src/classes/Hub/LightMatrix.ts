@@ -2,7 +2,7 @@
 
 import { Hub } from ".";
 import { writeLine } from "../../functions/writeLine";
-import * as LightMatrixConsts from "../../types/lightMatrix";
+import LightMatrixConsts from "../../types/LightMatrix";
 
 // Code
 
@@ -82,7 +82,7 @@ export class LightMatrix extends Hub {
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-light_matrix-func-show_image
    * @param image The id of the image to show. The range of available images is 1 to 67. There are consts on the light_matrix module for these.
    */
-  showImage(image: LightMatrixConsts.default) {}
+  showImage(image: LightMatrixConsts) {}
   /**
    * Displays text on the Light Matrix, one letter at a time, scrolling from right to left except if there is a single character to show which will not scroll
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-light_matrix-func-write
