@@ -9,14 +9,20 @@
   },
   "keywords": [],
   "author": "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/leontm-dev/spiky.js/blob/main/LICENSE.md"
-  },
+  "license": "MIT",
   "funding": {
     "type": "buymeacoffee",
     "url": "https://www.buymeacoffee.com/leontm"
   },
+  "bugs": {
+    "url": "https://github.com/leontm-dev/spiky.js/issues"
+  },
+  "maintainers": [
+    "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)"
+  ],
+  "private": "false",
+  "pricing": "Free",
+  "readme": "https://github.com/leontm-dev/spiky.js/blob/master/readme.md",
   "displayName": "spiky.js",
   "devDependencies": {
     "@types/node": "^20.10.8",
