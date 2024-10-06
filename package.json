@@ -10,12 +10,13 @@
   "keywords": [],
   "author": "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)",
   "license": "MIT",
-  "funding": {
-    "type": "buymeacoffee",
-    "url": "https://www.buymeacoffee.com/leontm"
-  },
   "bugs": {
     "url": "https://github.com/leontm-dev/spiky.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "src",
+    "url": "git+https://github.com/leontm-dev/spiky.js.git"
   },
   "maintainers": [
     "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)"
