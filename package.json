@@ -27,5 +27,11 @@
   "devDependencies": {
     "@types/node": "^20.10.8",
     "typescript": "^5.0.4"
-  }
+  },
+  "categories": [
+    "Education",
+    "Programming Languages",
+    "Testing",
+    "Other"
+  ]
 }
