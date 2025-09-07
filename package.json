@@ -1,14 +1,44 @@
 {
   "name": "spiky.js",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "This is a npm package for all the people that want to code their Spike Prime Robot with JavaScript. With this package you can convert JavaScript code to Python which can run on the robot. This package is still in development so there can be some bugs. If you find a bug please report it on the GitHub page. We are not connected to Lego® or the Spike Prime.",
-  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/Runloop.js",
+    "./app": "./dist/App/index.js",
+    "./app/bargraph": "./dist/App/Bargraph.js",
+    "./app/display": "./dist/App/Display.js",
+    "./app/linegraph": "./dist/App/Linegraph.js",
+    "./app/music": "./dist/App/Music.js",
+    "./app/sound": "./dist/App/Sound.js",
+    "./hub": "./dist/Hub/index.js",
+    "./hub/button": "./dist/Hub/Button.js",
+    "./hub/light": "./dist/Hub/Light.js",
+    "./hub/lightmatrix": "./dist/Hub/LightMatrix.js",
+    "./hub/motionsensor": "./dist/Hub/MotionSensor.js",
+    "./hub/port": "./dist/Hub/Port.js",
+    "./hub/sound": "./dist/Hub/Sound.js",
+    "./color": "./dist/Color.js",
+    "./colormatrix": "./dist/ColorMatrix.js",
+    "./colorsensor": "./dist/ColorSensor.js",
+    "./device": "./dist/Device.js",
+    "./distancesensor": "./dist/DistanceSensor.js",
+    "./forcesensor": "./dist/ForceSensor.js",
+    "./motor": "./dist/Motor.js",
+    "./motorpair": "./dist/MotorPair.js",
+    "./orientation": "./dist/Orientation.js",
+    "./runloop": "./dist/Runloop.js"
+  },
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://buymeacoffee.com/leontm"
+  },
   "scripts": {
     "convert": "node dist/index.js",
     "build": "tsc -build && yarn"
   },
   "keywords": [],
   "author": "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)",
+  "homepage": "https://leontm.me/apps/spiky.js",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/leontm-dev/spiky.js/issues"
