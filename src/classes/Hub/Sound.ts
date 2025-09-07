@@ -1,7 +1,6 @@
 // Imports
 
 import { Hub } from ".";
-import * as SoundConsts from "../../types/Sound";
 
 // Code
 
@@ -28,13 +27,13 @@ export class Sound extends Hub {
     freq: number,
     duration: number,
     volume: number,
-    attack?: number,
-    decay?: number,
-    sustain?: number,
-    release?: number,
-    transition?: number,
-    waveform?: SoundConsts.default,
-    channel?: SoundConsts.default.ANY | SoundConsts.default.DEFAULT
+    attack: number = 0,
+    decay: number = 0,
+    sustain: number = 100,
+    release: number = 0,
+    transition: number = 10,
+    waveform: number = 1,
+    channel: number = -1
   ): Promise<unknown> {
     return new Promise((resolve) => setTimeout(resolve, 1000));
   }
