@@ -1,6 +1,5 @@
 // Imports
 
-import { writeLine } from "../../functions/writeLine";
 import { Hub } from ".";
 import * as SoundConsts from "../../types/Sound";
 
@@ -11,17 +10,6 @@ import * as SoundConsts from "../../types/Sound";
  * @extends Hub
  */
 export class Sound extends Hub {
-  readonly variableName: string;
-  constructor(variableName?: string) {
-    super();
-    if (!variableName) {
-      this.variableName = "sound";
-    } else {
-      this.variableName = variableName;
-      writeLine(`${variableName} = sound`, "code");
-    }
-    writeLine("from hub import sound", "imports");
-  }
   /**
    * Plays a beep sound from the hub
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-beep
@@ -36,7 +24,7 @@ export class Sound extends Hub {
    * @param waveform The synthesized waveform. Use one of the constants in the hub.sound module.
    * @param channel The desired channel to play on, options are sound.DEFAULT and sound.ANY
    */
-  beep(
+  static beep(
     freq: number,
     duration: number,
     volume: number,
@@ -47,44 +35,24 @@ export class Sound extends Hub {
     transition?: number,
     waveform?: SoundConsts.default,
     channel?: SoundConsts.default.ANY | SoundConsts.default.DEFAULT
-  ) {
-    if (volume < 0 || volume > 100) {
-      throw new Error("Volume must be between 0 and 100");
-    }
-    if (attack == undefined) {
-      attack = 0;
-    }
-    if (decay == undefined) {
-      decay = 0;
-    }
-    if (sustain == undefined) {
-      sustain = 100;
-    }
-    if (release == undefined) {
-      release = 0;
-    }
-    if (transition == undefined) {
-      transition = 10;
-    }
-    if (waveform == undefined) {
-      waveform = SoundConsts.default.WAVEFORM_SINE;
-    }
-    if (channel == undefined) {
-      channel = SoundConsts.default.DEFAULT;
-    }
+  ): Promise<unknown> {
+    return new Promise((resolve) => setTimeout(resolve, 1000));
   }
   /**
    * Stops all noise from the hub
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-stop
    */
-  stop() {}
+  static stop(): void {}
   /**
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-volume
    * @param volume The volume to set (0-100)
    */
-  volume(volume: number) {
-    if (volume < 0 || volume > 100) {
-      throw new Error("Volume must be between 0 and 100");
-    }
-  }
+  static volume(volume: number): void {}
+
+  ANY = -2;
+  DEFAULT = -1;
+  WAVEFORM_SINE = 1;
+  WAVEFORM_SAWTOOTH = 3;
+  WAVEFORM_SQUARE = 2;
+  WAVEFORM_TRIANGLE = 1;
 }

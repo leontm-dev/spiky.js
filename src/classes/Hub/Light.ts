@@ -1,9 +1,6 @@
 // Imports
 
-import { writeLine } from "../../functions/writeLine";
 import { Hub } from ".";
-import Color from "../../types/Color";
-import * as LightConstant from "../../types/Light";
 
 // Code
 
@@ -13,21 +10,13 @@ import * as LightConstant from "../../types/Light";
  * @extends Hub
  */
 export class Light extends Hub {
-  readonly variableName: string;
-  constructor(variableName?: string) {
-    super();
-    if (!variableName) {
-      this.variableName = "light";
-    } else {
-      this.variableName = variableName;
-      writeLine(`${variableName} = light`, "code");
-    }
-    writeLine("from hub import light", "imports");
-  }
   /**
    * Change the color of a light on the hub.
    * @param light The light on the hub
    * @param color A color from the color module
    */
-  color(light: LightConstant.default, color: Color) {}
+  static color(light: number, color: number): void {}
+
+  POWER = 0;
+  CONNECT = 1;
 }

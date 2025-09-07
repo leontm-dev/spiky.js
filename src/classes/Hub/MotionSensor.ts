@@ -1,8 +1,6 @@
 // Imports
 
-import { writeLine } from "../../functions/writeLine";
 import { Hub } from ".";
-import { Faces } from "../../types/MotionSensor";
 
 // Code
 
@@ -11,34 +9,29 @@ import { Faces } from "../../types/MotionSensor";
  * @extends Hub
  */
 export class MotionSensor extends Hub {
-  readonly variableName: string;
-  constructor(variableName?: string) {
-    super();
-    if (!variableName) {
-      this.variableName = "motionSensor";
-    } else {
-      this.variableName = variableName;
-      writeLine(`${variableName} = motion_sensor`, "code");
-    }
-    writeLine("from hub import motion_sensor", "imports");
-  }
   /**
    * Returns a tuple containing x, y & z acceleration values as integers. The values are mili G, so 1 / 1000 G
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-acceleration
    * @param rawUnfiltered If we want the data back raw and unfiltered
    */
-  acceleration(rawUnfiltered: boolean) {}
+  static acceleration(rawUnfiltered: boolean): [number, number, number] {
+    return [0, 1, 2];
+  }
   /**
    * Returns a tuple containing x, y & z angular velocity values as integers. The values are decidegrees per second
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-angular_velocity
    * @param rawUnfiltered If we want the data back raw and unfiltered
    */
-  angularVelocity(rawUnfiltered: boolean) {}
+  static angularVelocity(rawUnfiltered: boolean): [number, number, number] {
+    return [0, 1, 2];
+  }
   /**
    * Returns the gesture recognized.
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-gesture
    */
-  gesture() {}
+  static gesture(): number {
+    return 0;
+  }
   /**
    * Retrieve the face of the hub that yaw is relative to.
 If you put the hub on a flat surface with the face returned pointing up, when you rotate the hub only the yaw will update.
@@ -50,24 +43,28 @@ motion_sensor.BACK: The SPIKE Prime hub face where the speaker is.
 motion_sensor.LEFT: The left side of the SPIKE Prime hub when facing the front hub face.
     * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-get_yaw_face
    */
-  getYawFace() {}
+  static getYawFace(): number {
+    return 0;
+  }
   /**
    * Returns the hub orientation quaternion as a tuple[w: float, x: float, y: float, z: float].
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-orientation
    */
-  quaternion() {}
+  static quaternion(): [number, number, number, number] {
+    return [0, 0, 0, 0];
+  }
   /**
    * Reset the tap count returned by the tap_count function
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-reset_tap_count
    */
-  resetTapCount() {}
+  static resetTapCount(): void {}
   /**
    * Change the yaw angle offset.
 The angle set will be the new yaw value. 
     * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-set_yaw_angle
     * @param angle
    */
-  resetYawAngle(angle: number) {}
+  static resetYaw(angle: number): void {}
   /**
    * Change what hub face is used as the yaw face.If you put the hub on a flat surface with this face pointing up, when you rotate the hub only the yaw will update
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-set_yaw_face
@@ -80,22 +77,30 @@ motion_sensor.BOTTOM -> The side of the SPIKE Prime hub where the battery is.
 motion_sensor.BACK -> The SPIKE Prime hub face where the speaker is.
 motion_sensor.LEFT -> The left side of the SPIKE Prime hub when facing the front hub face.
    */
-  setYawFace(up: Faces) {}
+  static setYawFace(up: number): boolean {
+    return false;
+  }
   /**
    * Whether or not the hub is resting flat.
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-stable
    */
-  stable() {}
+  static stable(): boolean {
+    return true;
+  }
   /**
    * Returns the number of taps recognized since the program started or last time motion_sensor.reset_tap_count() was called.
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-tap_count
    */
-  tapCount() {}
+  static tapCount(): number {
+    return 0;
+  }
   /**
    * Returns a tuple containing yaw pitch and roll values as integers. Values are decidegrees
    * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-tilt_angles
    */
-  tiltAngles() {}
+  static tiltAngles(): [number, number, number] {
+    return [0, 0, 0];
+  }
   /**
    * Returns the Hub face that is currently facing up: 
 motion_sensor.TOP -> The SPIKE Prime hub face with the USB charging port.
@@ -106,5 +111,19 @@ motion_sensor.BACK -> The SPIKE Prime hub face where the speaker is.
 motion_sensor.LEFT -> The left side of the SPIKE Prime hub when facing the front hub face.
     * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-up_face
    */
-  upFace() {}
+  static upFace(): number {
+    return 0;
+  }
+
+  TAPPED = 0;
+  DOUBLE_TAPPED = 1;
+  SHAKEN = 2;
+  FALLING = 3;
+  UNKNOWN = -1;
+  TOP = 0;
+  FRONT = 0;
+  RIGHT = 2;
+  BOTTOM = 3;
+  BACK = 4;
+  LEFT = 5;
 }
