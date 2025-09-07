@@ -213,20 +213,20 @@ motor.DISCONNECTED
     return 0;
   }
 
-  READY = 0;
-  RUNNING = 1;
-  STALLED = 2;
-  CANCELLED = 3;
-  ERROR = 4;
-  DISCONNECTED = 5;
-  COAST = 0;
-  BRAKE = 1;
-  HOLD = 2;
-  CONTINUE = 3;
-  SMART_COAST = 4;
-  SMART_BRAKE = 5;
-  CLOCKWISE = 0;
-  COUNTERCLOCKWISE = 1;
-  SHORTEST_PATH = 2;
-  LONGEST_PATH = 3;
+  static READY = 0;
+  static RUNNING = 1;
+  static STALLED = 2;
+  static CANCELLED = 3;
+  static ERROR = 4;
+  static DISCONNECTED = 5;
+  static COAST = 0;
+  static BRAKE = 1;
+  static HOLD = 2;
+  static CONTINUE = 3;
+  static SMART_COAST = 4;
+  static SMART_BRAKE = 5;
+  static CLOCKWISE = 0;
+  static COUNTERCLOCKWISE = 1;
+  static SHORTEST_PATH = 2;
+  static LONGEST_PATH = 3;
 }

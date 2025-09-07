@@ -143,7 +143,7 @@ export class MotorPair {
    */
   static unpair(pair: number): void {}
 
-  PAIR_1 = 0;
-  PAIR_2 = 1;
-  PAIR_3 = 2;
+  static PAIR_1 = 0;
+  static PAIR_2 = 1;
+  static PAIR_3 = 2;
 }

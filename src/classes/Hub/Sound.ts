@@ -48,10 +48,10 @@ export class Sound extends Hub {
    */
   static volume(volume: number): void {}
 
-  ANY = -2;
-  DEFAULT = -1;
-  WAVEFORM_SINE = 1;
-  WAVEFORM_SAWTOOTH = 3;
-  WAVEFORM_SQUARE = 2;
-  WAVEFORM_TRIANGLE = 1;
+  static ANY = -2;
+  static DEFAULT = -1;
+  static WAVEFORM_SINE = 1;
+  static WAVEFORM_SAWTOOTH = 3;
+  static WAVEFORM_SQUARE = 2;
+  static WAVEFORM_TRIANGLE = 1;
 }

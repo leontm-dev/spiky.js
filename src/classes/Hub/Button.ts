@@ -17,6 +17,6 @@ export class Button extends Hub {
     return false;
   }
 
-  LEFT = 1;
-  RIGHT = 2;
+  static LEFT = 1;
+  static RIGHT = 2;
 }

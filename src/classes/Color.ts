@@ -1,16 +1,16 @@
 // Code
 
 export class Color {
-  BLACK = 0;
-  MAGENTA = 1;
-  PURPLE = 2;
-  BLUE = 3;
-  AZURE = 4;
-  TURQUOISE = 5;
-  GREEN = 6;
-  YELLOW = 7;
-  ORANGE = 8;
-  RED = 9;
-  WHITE = 10;
-  UNKNOWN = -1;
+  static BLACK = 0;
+  static MAGENTA = 1;
+  static PURPLE = 2;
+  static BLUE = 3;
+  static AZURE = 4;
+  static TURQUOISE = 5;
+  static GREEN = 6;
+  static YELLOW = 7;
+  static ORANGE = 8;
+  static RED = 9;
+  static WHITE = 10;
+  static UNKNOWN = -1;
 }

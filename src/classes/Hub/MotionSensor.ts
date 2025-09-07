@@ -115,15 +115,15 @@ motion_sensor.LEFT -> The left side of the SPIKE Prime hub when facing the front
     return 0;
   }
 
-  TAPPED = 0;
-  DOUBLE_TAPPED = 1;
-  SHAKEN = 2;
-  FALLING = 3;
-  UNKNOWN = -1;
-  TOP = 0;
-  FRONT = 0;
-  RIGHT = 2;
-  BOTTOM = 3;
-  BACK = 4;
-  LEFT = 5;
+  static TAPPED = 0;
+  static DOUBLE_TAPPED = 1;
+  static SHAKEN = 2;
+  static FALLING = 3;
+  static UNKNOWN = -1;
+  static TOP = 0;
+  static FRONT = 0;
+  static RIGHT = 2;
+  static BOTTOM = 3;
+  static BACK = 4;
+  static LEFT = 5;
 }

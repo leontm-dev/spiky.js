@@ -32,25 +32,25 @@ export class Display extends App {
    */
   static text(text: string): void {}
 
-  IMAGE_ROBOT_1 = 1;
-  IMAGE_ROBOT_2 = 2;
-  IMAGE_ROBOT_3 = 3;
-  IMAGE_ROBOT_4 = 4;
-  IMAGE_ROBOT_5 = 5;
-  IMAGE_HUB_1 = 6;
-  IMAGE_HUB_2 = 7;
-  IMAGE_HUB_3 = 8;
-  IMAGE_HUB_4 = 9;
-  IMAGE_AMUSEMENT_PARK = 10;
-  IMAGE_BEACH = 11;
-  IMAGE_HAUNTED_HOUSE = 12;
-  IMAGE_CARNIVAL = 13;
-  IMAGE_BOOKSHELF = 14;
-  IMAGE_PLAYGROUND = 15;
-  IMAGE_MOON = 16;
-  IMAGE_CAVE = 17;
-  IMAGE_OCEAN = 18;
-  IMAGE_POLAR_BEAR = 19;
-  IMAGE_PARK = 20;
-  IMAGE_RANDOM = 21;
+  static IMAGE_ROBOT_1 = 1;
+  static IMAGE_ROBOT_2 = 2;
+  static IMAGE_ROBOT_3 = 3;
+  static IMAGE_ROBOT_4 = 4;
+  static IMAGE_ROBOT_5 = 5;
+  static IMAGE_HUB_1 = 6;
+  static IMAGE_HUB_2 = 7;
+  static IMAGE_HUB_3 = 8;
+  static IMAGE_HUB_4 = 9;
+  static IMAGE_AMUSEMENT_PARK = 10;
+  static IMAGE_BEACH = 11;
+  static IMAGE_HAUNTED_HOUSE = 12;
+  static IMAGE_CARNIVAL = 13;
+  static IMAGE_BOOKSHELF = 14;
+  static IMAGE_PLAYGROUND = 15;
+  static IMAGE_MOON = 16;
+  static IMAGE_CAVE = 17;
+  static IMAGE_OCEAN = 18;
+  static IMAGE_POLAR_BEAR = 19;
+  static IMAGE_PARK = 20;
+  static IMAGE_RANDOM = 21;
 }

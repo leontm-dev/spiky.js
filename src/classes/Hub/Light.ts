@@ -17,6 +17,6 @@ export class Light extends Hub {
    */
   static color(light: number, color: number): void {}
 
-  POWER = 0;
-  CONNECT = 1;
+  static POWER = 0;
+  static CONNECT = 1;
 }
