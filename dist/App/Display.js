@@ -1,0 +1,74 @@
+"use strict";
+// Imports
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Display = void 0;
+var _1 = require(".");
+// Code
+/**
+ * The display module is used show images in the SPIKE App
+ * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-app-display
+ */
+var Display = /** @class */ (function (_super) {
+    __extends(Display, _super);
+    function Display() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.IMAGE_ROBOT_1 = 1;
+        _this.IMAGE_ROBOT_2 = 2;
+        _this.IMAGE_ROBOT_3 = 3;
+        _this.IMAGE_ROBOT_4 = 4;
+        _this.IMAGE_ROBOT_5 = 5;
+        _this.IMAGE_HUB_1 = 6;
+        _this.IMAGE_HUB_2 = 7;
+        _this.IMAGE_HUB_3 = 8;
+        _this.IMAGE_HUB_4 = 9;
+        _this.IMAGE_AMUSEMENT_PARK = 10;
+        _this.IMAGE_BEACH = 11;
+        _this.IMAGE_HAUNTED_HOUSE = 12;
+        _this.IMAGE_CARNIVAL = 13;
+        _this.IMAGE_BOOKSHELF = 14;
+        _this.IMAGE_PLAYGROUND = 15;
+        _this.IMAGE_MOON = 16;
+        _this.IMAGE_CAVE = 17;
+        _this.IMAGE_OCEAN = 18;
+        _this.IMAGE_POLAR_BEAR = 19;
+        _this.IMAGE_PARK = 20;
+        _this.IMAGE_RANDOM = 21;
+        return _this;
+    }
+    /**
+     * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-app-display-func-hide
+     */
+    Display.hide = function () { };
+    /**
+     * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-app-display-func-image
+     * @param image The id of the image to show. The range of available images is 1 to 21. There are consts on the display module for these
+     */
+    Display.image = function (image) { };
+    /**
+     * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-app-display-func-show
+     * @param fullscreen Show in full screen
+     */
+    Display.show = function (fullscreen) { };
+    /**
+     * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-app-display-func-text
+     * @param text The text to display
+     */
+    Display.text = function (text) { };
+    return Display;
+}(_1.App));
+exports.Display = Display;
