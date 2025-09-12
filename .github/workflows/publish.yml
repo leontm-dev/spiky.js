@@ -3,8 +3,6 @@ on:
   workflow_run:
     workflows: ["CodeQL"]
     types: [completed]
-    branches:
-      - "master/**"
 
 jobs:
   build:
