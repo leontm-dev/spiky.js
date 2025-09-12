@@ -1,6 +1,6 @@
 {
   "name": "spiky.js",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A package full of building blocks to interact with the Spike PRIME Robots, that can be transpiled into on the robots executable Python code.",
   "exports": {
     ".": "./dist/Runloop.js",
