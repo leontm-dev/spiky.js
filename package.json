@@ -50,6 +50,7 @@
     "robots",
     "education"
   ],
+  "types": "./dist/classTypes.js",
   "author": "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)",
   "homepage": "https://leontm.me/apps/spiky.js",
   "license": "MIT",
