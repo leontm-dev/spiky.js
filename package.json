@@ -39,7 +39,7 @@
     "url": "https://buymeacoffee.com/leontm"
   },
   "scripts": {
-    "build": "tsc -build && yarn"
+    "build": "tsc -build && npm install"
   },
   "keywords": [
     "spike-prime",
