@@ -4,19 +4,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Color = void 0;
 var Color = /** @class */ (function () {
     function Color() {
-        this.BLACK = 0;
-        this.MAGENTA = 1;
-        this.PURPLE = 2;
-        this.BLUE = 3;
-        this.AZURE = 4;
-        this.TURQUOISE = 5;
-        this.GREEN = 6;
-        this.YELLOW = 7;
-        this.ORANGE = 8;
-        this.RED = 9;
-        this.WHITE = 10;
-        this.UNKNOWN = -1;
     }
+    Color.BLACK = 0;
+    Color.MAGENTA = 1;
+    Color.PURPLE = 2;
+    Color.BLUE = 3;
+    Color.AZURE = 4;
+    Color.TURQUOISE = 5;
+    Color.GREEN = 6;
+    Color.YELLOW = 7;
+    Color.ORANGE = 8;
+    Color.RED = 9;
+    Color.WHITE = 10;
+    Color.UNKNOWN = -1;
     return Color;
 }());
 exports.Color = Color;

@@ -26,14 +26,7 @@ var _1 = require(".");
 var Sound = /** @class */ (function (_super) {
     __extends(Sound, _super);
     function Sound() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.ANY = -2;
-        _this.DEFAULT = -1;
-        _this.WAVEFORM_SINE = 1;
-        _this.WAVEFORM_SAWTOOTH = 3;
-        _this.WAVEFORM_SQUARE = 2;
-        _this.WAVEFORM_TRIANGLE = 1;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * Plays a beep sound from the hub
@@ -69,6 +62,12 @@ var Sound = /** @class */ (function (_super) {
      * @param volume The volume to set (0-100)
      */
     Sound.volume = function (volume) { };
+    Sound.ANY = -2;
+    Sound.DEFAULT = -1;
+    Sound.WAVEFORM_SINE = 1;
+    Sound.WAVEFORM_SAWTOOTH = 3;
+    Sound.WAVEFORM_SQUARE = 2;
+    Sound.WAVEFORM_TRIANGLE = 1;
     return Sound;
 }(_1.Hub));
 exports.Sound = Sound;

@@ -11,6 +11,6 @@ export declare class Light extends Hub {
      * @param color A color from the color module
      */
     static color(light: number, color: number): void;
-    POWER: number;
-    CONNECT: number;
+    static POWER: number;
+    static CONNECT: number;
 }

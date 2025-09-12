@@ -26,10 +26,7 @@ var _1 = require(".");
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.LEFT = 1;
-        _this.RIGHT = 2;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-button-func-pressed
@@ -38,6 +35,8 @@ var Button = /** @class */ (function (_super) {
     Button.pressed = function (button) {
         return false;
     };
+    Button.LEFT = 1;
+    Button.RIGHT = 2;
     return Button;
 }(_1.Hub));
 exports.Button = Button;

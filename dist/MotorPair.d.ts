@@ -90,7 +90,7 @@ export declare class MotorPair {
      * @param pair The pair slot of the Motor Pair.
      */
     static unpair(pair: number): void;
-    PAIR_1: number;
-    PAIR_2: number;
-    PAIR_3: number;
+    static PAIR_1: number;
+    static PAIR_2: number;
+    static PAIR_3: number;
 }

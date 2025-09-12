@@ -29,10 +29,10 @@ export declare class Sound extends Hub {
      * @param volume The volume to set (0-100)
      */
     static volume(volume: number): void;
-    ANY: number;
-    DEFAULT: number;
-    WAVEFORM_SINE: number;
-    WAVEFORM_SAWTOOTH: number;
-    WAVEFORM_SQUARE: number;
-    WAVEFORM_TRIANGLE: number;
+    static ANY: number;
+    static DEFAULT: number;
+    static WAVEFORM_SINE: number;
+    static WAVEFORM_SAWTOOTH: number;
+    static WAVEFORM_SQUARE: number;
+    static WAVEFORM_TRIANGLE: number;
 }

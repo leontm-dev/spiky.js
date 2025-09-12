@@ -22,15 +22,14 @@ var _1 = require(".");
 var Port = /** @class */ (function (_super) {
     __extends(Port, _super);
     function Port() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.A = 0;
-        _this.B = 1;
-        _this.C = 2;
-        _this.D = 3;
-        _this.E = 4;
-        _this.F = 5;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
+    Port.A = 0;
+    Port.B = 1;
+    Port.C = 2;
+    Port.D = 3;
+    Port.E = 4;
+    Port.F = 5;
     return Port;
 }(_1.Hub));
 exports.Port = Port;

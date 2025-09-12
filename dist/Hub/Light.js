@@ -27,10 +27,7 @@ var _1 = require(".");
 var Light = /** @class */ (function (_super) {
     __extends(Light, _super);
     function Light() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.POWER = 0;
-        _this.CONNECT = 1;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * Change the color of a light on the hub.
@@ -38,6 +35,8 @@ var Light = /** @class */ (function (_super) {
      * @param color A color from the color module
      */
     Light.color = function (light, color) { };
+    Light.POWER = 0;
+    Light.CONNECT = 1;
     return Light;
 }(_1.Hub));
 exports.Light = Light;

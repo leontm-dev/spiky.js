@@ -23,25 +23,25 @@ export declare class Display extends App {
      * @param text The text to display
      */
     static text(text: string): void;
-    IMAGE_ROBOT_1: number;
-    IMAGE_ROBOT_2: number;
-    IMAGE_ROBOT_3: number;
-    IMAGE_ROBOT_4: number;
-    IMAGE_ROBOT_5: number;
-    IMAGE_HUB_1: number;
-    IMAGE_HUB_2: number;
-    IMAGE_HUB_3: number;
-    IMAGE_HUB_4: number;
-    IMAGE_AMUSEMENT_PARK: number;
-    IMAGE_BEACH: number;
-    IMAGE_HAUNTED_HOUSE: number;
-    IMAGE_CARNIVAL: number;
-    IMAGE_BOOKSHELF: number;
-    IMAGE_PLAYGROUND: number;
-    IMAGE_MOON: number;
-    IMAGE_CAVE: number;
-    IMAGE_OCEAN: number;
-    IMAGE_POLAR_BEAR: number;
-    IMAGE_PARK: number;
-    IMAGE_RANDOM: number;
+    static IMAGE_ROBOT_1: number;
+    static IMAGE_ROBOT_2: number;
+    static IMAGE_ROBOT_3: number;
+    static IMAGE_ROBOT_4: number;
+    static IMAGE_ROBOT_5: number;
+    static IMAGE_HUB_1: number;
+    static IMAGE_HUB_2: number;
+    static IMAGE_HUB_3: number;
+    static IMAGE_HUB_4: number;
+    static IMAGE_AMUSEMENT_PARK: number;
+    static IMAGE_BEACH: number;
+    static IMAGE_HAUNTED_HOUSE: number;
+    static IMAGE_CARNIVAL: number;
+    static IMAGE_BOOKSHELF: number;
+    static IMAGE_PLAYGROUND: number;
+    static IMAGE_MOON: number;
+    static IMAGE_CAVE: number;
+    static IMAGE_OCEAN: number;
+    static IMAGE_POLAR_BEAR: number;
+    static IMAGE_PARK: number;
+    static IMAGE_RANDOM: number;
 }

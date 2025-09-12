@@ -9,6 +9,6 @@ export declare class Button extends Hub {
      * @param button A button from the button submodule in the hub module
      */
     static pressed(button: number): boolean;
-    LEFT: number;
-    RIGHT: number;
+    static LEFT: number;
+    static RIGHT: number;
 }

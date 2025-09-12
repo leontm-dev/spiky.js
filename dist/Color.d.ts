@@ -1,14 +1,14 @@
 export declare class Color {
-    BLACK: number;
-    MAGENTA: number;
-    PURPLE: number;
-    BLUE: number;
-    AZURE: number;
-    TURQUOISE: number;
-    GREEN: number;
-    YELLOW: number;
-    ORANGE: number;
-    RED: number;
-    WHITE: number;
-    UNKNOWN: number;
+    static BLACK: number;
+    static MAGENTA: number;
+    static PURPLE: number;
+    static BLUE: number;
+    static AZURE: number;
+    static TURQUOISE: number;
+    static GREEN: number;
+    static YELLOW: number;
+    static ORANGE: number;
+    static RED: number;
+    static WHITE: number;
+    static UNKNOWN: number;
 }

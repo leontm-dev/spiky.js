@@ -26,29 +26,7 @@ var _1 = require(".");
 var Display = /** @class */ (function (_super) {
     __extends(Display, _super);
     function Display() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.IMAGE_ROBOT_1 = 1;
-        _this.IMAGE_ROBOT_2 = 2;
-        _this.IMAGE_ROBOT_3 = 3;
-        _this.IMAGE_ROBOT_4 = 4;
-        _this.IMAGE_ROBOT_5 = 5;
-        _this.IMAGE_HUB_1 = 6;
-        _this.IMAGE_HUB_2 = 7;
-        _this.IMAGE_HUB_3 = 8;
-        _this.IMAGE_HUB_4 = 9;
-        _this.IMAGE_AMUSEMENT_PARK = 10;
-        _this.IMAGE_BEACH = 11;
-        _this.IMAGE_HAUNTED_HOUSE = 12;
-        _this.IMAGE_CARNIVAL = 13;
-        _this.IMAGE_BOOKSHELF = 14;
-        _this.IMAGE_PLAYGROUND = 15;
-        _this.IMAGE_MOON = 16;
-        _this.IMAGE_CAVE = 17;
-        _this.IMAGE_OCEAN = 18;
-        _this.IMAGE_POLAR_BEAR = 19;
-        _this.IMAGE_PARK = 20;
-        _this.IMAGE_RANDOM = 21;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-app-display-func-hide
@@ -69,6 +47,27 @@ var Display = /** @class */ (function (_super) {
      * @param text The text to display
      */
     Display.text = function (text) { };
+    Display.IMAGE_ROBOT_1 = 1;
+    Display.IMAGE_ROBOT_2 = 2;
+    Display.IMAGE_ROBOT_3 = 3;
+    Display.IMAGE_ROBOT_4 = 4;
+    Display.IMAGE_ROBOT_5 = 5;
+    Display.IMAGE_HUB_1 = 6;
+    Display.IMAGE_HUB_2 = 7;
+    Display.IMAGE_HUB_3 = 8;
+    Display.IMAGE_HUB_4 = 9;
+    Display.IMAGE_AMUSEMENT_PARK = 10;
+    Display.IMAGE_BEACH = 11;
+    Display.IMAGE_HAUNTED_HOUSE = 12;
+    Display.IMAGE_CARNIVAL = 13;
+    Display.IMAGE_BOOKSHELF = 14;
+    Display.IMAGE_PLAYGROUND = 15;
+    Display.IMAGE_MOON = 16;
+    Display.IMAGE_CAVE = 17;
+    Display.IMAGE_OCEAN = 18;
+    Display.IMAGE_POLAR_BEAR = 19;
+    Display.IMAGE_PARK = 20;
+    Display.IMAGE_RANDOM = 21;
     return Display;
 }(_1.App));
 exports.Display = Display;

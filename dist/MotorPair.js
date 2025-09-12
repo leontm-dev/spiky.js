@@ -8,9 +8,6 @@ exports.MotorPair = void 0;
  */
 var MotorPair = /** @class */ (function () {
     function MotorPair() {
-        this.PAIR_1 = 0;
-        this.PAIR_2 = 1;
-        this.PAIR_3 = 2;
     }
     /**
      * Move a Motor Pair at a constant speed until a new command is given.
@@ -128,6 +125,9 @@ var MotorPair = /** @class */ (function () {
      * @param pair The pair slot of the Motor Pair.
      */
     MotorPair.unpair = function (pair) { };
+    MotorPair.PAIR_1 = 0;
+    MotorPair.PAIR_2 = 1;
+    MotorPair.PAIR_3 = 2;
     return MotorPair;
 }());
 exports.MotorPair = MotorPair;

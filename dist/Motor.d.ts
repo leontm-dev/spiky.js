@@ -159,20 +159,20 @@ export declare class Motor {
      * @param port A port from the port submodule in the hub module
      */
     static velocity(port: number): number;
-    READY: number;
-    RUNNING: number;
-    STALLED: number;
-    CANCELLED: number;
-    ERROR: number;
-    DISCONNECTED: number;
-    COAST: number;
-    BRAKE: number;
-    HOLD: number;
-    CONTINUE: number;
-    SMART_COAST: number;
-    SMART_BRAKE: number;
-    CLOCKWISE: number;
-    COUNTERCLOCKWISE: number;
-    SHORTEST_PATH: number;
-    LONGEST_PATH: number;
+    static READY: number;
+    static RUNNING: number;
+    static STALLED: number;
+    static CANCELLED: number;
+    static ERROR: number;
+    static DISCONNECTED: number;
+    static COAST: number;
+    static BRAKE: number;
+    static HOLD: number;
+    static CONTINUE: number;
+    static SMART_COAST: number;
+    static SMART_BRAKE: number;
+    static CLOCKWISE: number;
+    static COUNTERCLOCKWISE: number;
+    static SHORTEST_PATH: number;
+    static LONGEST_PATH: number;
 }

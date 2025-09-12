@@ -8,11 +8,11 @@ exports.Orientation = void 0;
  */
 var Orientation = /** @class */ (function () {
     function Orientation() {
-        this.UP = 0;
-        this.RIGHT = 1;
-        this.DOWN = 2;
-        this.LEFT = 3;
     }
+    Orientation.UP = 0;
+    Orientation.RIGHT = 1;
+    Orientation.DOWN = 2;
+    Orientation.LEFT = 3;
     return Orientation;
 }());
 exports.Orientation = Orientation;

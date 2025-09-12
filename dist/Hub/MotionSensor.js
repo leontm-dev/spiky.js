@@ -26,19 +26,7 @@ var _1 = require(".");
 var MotionSensor = /** @class */ (function (_super) {
     __extends(MotionSensor, _super);
     function MotionSensor() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.TAPPED = 0;
-        _this.DOUBLE_TAPPED = 1;
-        _this.SHAKEN = 2;
-        _this.FALLING = 3;
-        _this.UNKNOWN = -1;
-        _this.TOP = 0;
-        _this.FRONT = 0;
-        _this.RIGHT = 2;
-        _this.BOTTOM = 3;
-        _this.BACK = 4;
-        _this.LEFT = 5;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * Returns a tuple containing x, y & z acceleration values as integers. The values are mili G, so 1 / 1000 G
@@ -145,6 +133,17 @@ var MotionSensor = /** @class */ (function (_super) {
     MotionSensor.upFace = function () {
         return 0;
     };
+    MotionSensor.TAPPED = 0;
+    MotionSensor.DOUBLE_TAPPED = 1;
+    MotionSensor.SHAKEN = 2;
+    MotionSensor.FALLING = 3;
+    MotionSensor.UNKNOWN = -1;
+    MotionSensor.TOP = 0;
+    MotionSensor.FRONT = 0;
+    MotionSensor.RIGHT = 2;
+    MotionSensor.BOTTOM = 3;
+    MotionSensor.BACK = 4;
+    MotionSensor.LEFT = 5;
     return MotionSensor;
 }(_1.Hub));
 exports.MotionSensor = MotionSensor;

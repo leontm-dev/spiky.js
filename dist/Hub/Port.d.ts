@@ -1,9 +1,9 @@
 import { Hub } from ".";
 export declare class Port extends Hub {
-    A: number;
-    B: number;
-    C: number;
-    D: number;
-    E: number;
-    F: number;
+    static A: number;
+    static B: number;
+    static C: number;
+    static D: number;
+    static E: number;
+    static F: number;
 }

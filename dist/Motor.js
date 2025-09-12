@@ -7,22 +7,6 @@ exports.Motor = void 0;
  */
 var Motor = /** @class */ (function () {
     function Motor() {
-        this.READY = 0;
-        this.RUNNING = 1;
-        this.STALLED = 2;
-        this.CANCELLED = 3;
-        this.ERROR = 4;
-        this.DISCONNECTED = 5;
-        this.COAST = 0;
-        this.BRAKE = 1;
-        this.HOLD = 2;
-        this.CONTINUE = 3;
-        this.SMART_COAST = 4;
-        this.SMART_BRAKE = 5;
-        this.CLOCKWISE = 0;
-        this.COUNTERCLOCKWISE = 1;
-        this.SHORTEST_PATH = 2;
-        this.LONGEST_PATH = 3;
     }
     /**
      * Get the absolute position of a Motor
@@ -214,6 +198,22 @@ var Motor = /** @class */ (function () {
     Motor.velocity = function (port) {
         return 0;
     };
+    Motor.READY = 0;
+    Motor.RUNNING = 1;
+    Motor.STALLED = 2;
+    Motor.CANCELLED = 3;
+    Motor.ERROR = 4;
+    Motor.DISCONNECTED = 5;
+    Motor.COAST = 0;
+    Motor.BRAKE = 1;
+    Motor.HOLD = 2;
+    Motor.CONTINUE = 3;
+    Motor.SMART_COAST = 4;
+    Motor.SMART_BRAKE = 5;
+    Motor.CLOCKWISE = 0;
+    Motor.COUNTERCLOCKWISE = 1;
+    Motor.SHORTEST_PATH = 2;
+    Motor.LONGEST_PATH = 3;
     return Motor;
 }());
 exports.Motor = Motor;

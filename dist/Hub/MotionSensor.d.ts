@@ -89,15 +89,15 @@ export declare class MotionSensor extends Hub {
       * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-motion_sensor-func-up_face
      */
     static upFace(): number;
-    TAPPED: number;
-    DOUBLE_TAPPED: number;
-    SHAKEN: number;
-    FALLING: number;
-    UNKNOWN: number;
-    TOP: number;
-    FRONT: number;
-    RIGHT: number;
-    BOTTOM: number;
-    BACK: number;
-    LEFT: number;
+    static TAPPED: number;
+    static DOUBLE_TAPPED: number;
+    static SHAKEN: number;
+    static FALLING: number;
+    static UNKNOWN: number;
+    static TOP: number;
+    static FRONT: number;
+    static RIGHT: number;
+    static BOTTOM: number;
+    static BACK: number;
+    static LEFT: number;
 }
