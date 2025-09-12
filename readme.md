@@ -1,33 +1,55 @@
-# Spiky.js
-A way to run the spike prime robot with the beauty of JavaScript
 
-### Table of Contents
-1. [How to install](#installation)
-2. [How it works](#working-process)
-3. [How to start](#start-coding)
-4. [Licenses and developers](#licenses-and-developers)
-5. [Docs](https://spiky-js.gitbook.io/docs/)
+# Spiky.js
+
+A package full of useful coding blocks, that can be transpiled into python.
+
+
+
+![NPM Version](https://img.shields.io/npm/v/spiky.js)
+![NPM Downloads](https://img.shields.io/npm/dm/spiky.js)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+![NPM Last Update](https://img.shields.io/npm/last-update/spiky.js)
+
 
 
 ## Installation
-You can simply install it with node.js and the npm command in the console.
 
- Simply use `npm i spiky.js`
-## Working process
-This package is converting JavaScript code into spike prime python code into .llps files to run those on the spike prime robot.
-## Start coding
-You start of with including spiky
+Install spiky.js using npm or yarn:
 
-`const Spiky = require("spiky.js")`
+```bash
+  npm install spiky.js
+```
+```bash
+  yarn add spiky.js
+```
+    
+Node: This package only gives you the building blocks. You will need to install spiky-cli to transpile the code from TypeScript to Python.
+## FAQ
 
-Afterwards you gonna define an editor in which you include the base name of the file you want to create (not the name of the js file, the base name without an . ending of the llps file)
+#### Is this package made, maintained or managed by Lego or any associated company?
 
-`const robot = new Spiky(filename)`
+No, this project is not handled by Lego in any way.
 
-Now you can use commands and everything, just as in the spike python version! Some systems are changed, if you miss some go to [the GitHub repository](https://github.com/leontm-dev/spiky/discussions) and summit your ideas!
-## Licenses and developers
-This repository is **no** official Lego Mindstorms repsitory!
-Licenses can be found in the other branch!
+#### What versions are currently supported?
 
-### Developers
-@leontm-dev
+This package is always evolving with the Spike Prime Codebase. All references from the Spike Prime Online API References are included and constantly updated.
+
+
+## Feedback & Support
+
+For feedback just create a new Discussion inside the GitHub Repository. Same goes for support requests. If you spot any errors or vulnerabilites in packages that are used, please do a pull request or an issue.
+
+
+## Authors
+
+- [@leontm-dev](https://www.github.com/leontm-dev)
+
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
