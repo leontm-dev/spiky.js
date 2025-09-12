@@ -41,7 +41,15 @@
   "scripts": {
     "build": "tsc -build && yarn"
   },
-  "keywords": [],
+  "keywords": [
+    "spike-prime",
+    "python",
+    "transpilation",
+    "transpile",
+    "typescript",
+    "robots",
+    "education"
+  ],
   "author": "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)",
   "homepage": "https://leontm.me/apps/spiky.js",
   "license": "MIT",
