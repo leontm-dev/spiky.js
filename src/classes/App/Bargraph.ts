@@ -1,6 +1,6 @@
 // Imports
 
-import { App } from ".";
+import { App } from "./index";
 
 // Code
 

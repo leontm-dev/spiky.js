@@ -1,6 +1,6 @@
 {
   "name": "spiky.js",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "description": "A package full of building blocks to interact with the Spike PRIME Robots, that can be transpiled into on the robots executable Python code.",
   "exports": {
     ".": "./dist/Runloop.js",
@@ -51,13 +51,14 @@
     "robots",
     "education"
   ],
-  "types": "./dist/classTypes.js",
+  "types": "./dist/index.d.ts",
   "author": "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)",
   "homepage": "https://leontm.me/apps/spiky.js",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/leontm-dev/spiky.js/issues"
   },
+  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "directory": "src",
@@ -66,6 +67,7 @@
   "maintainers": [
     "Leon Anneken <lanneken09@gmail.com> (https://leontm.me)"
   ],
+  "type": "module",
   "pricing": "Free",
   "readme": "https://github.com/leontm-dev/spiky.js/blob/master/readme.md",
   "displayName": "spiky.js",

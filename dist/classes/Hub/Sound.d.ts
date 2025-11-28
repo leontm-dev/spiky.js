@@ -1,12 +1,9 @@
-import { Hub } from ".";
-import * as SoundConsts from "../../types/Sound";
+import { Hub } from "./index";
 /**
  * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound
  * @extends Hub
  */
 export declare class Sound extends Hub {
-    readonly variableName: string;
-    constructor(variableName?: string);
     /**
      * Plays a beep sound from the hub
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-beep
@@ -21,15 +18,21 @@ export declare class Sound extends Hub {
      * @param waveform The synthesized waveform. Use one of the constants in the hub.sound module.
      * @param channel The desired channel to play on, options are sound.DEFAULT and sound.ANY
      */
-    beep(freq: number, duration: number, volume: number, attack?: number, decay?: number, sustain?: number, release?: number, transition?: number, waveform?: SoundConsts.default, channel?: SoundConsts.default.ANY | SoundConsts.default.DEFAULT): void;
+    static beep(freq: number, duration: number, volume: number, attack?: number, decay?: number, sustain?: number, release?: number, transition?: number, waveform?: number, channel?: number): Promise<unknown>;
     /**
      * Stops all noise from the hub
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-stop
      */
-    stop(): void;
+    static stop(): void;
     /**
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-volume
      * @param volume The volume to set (0-100)
      */
-    volume(volume: number): void;
+    static volume(volume: number): void;
+    static ANY: number;
+    static DEFAULT: number;
+    static WAVEFORM_SINE: number;
+    static WAVEFORM_SAWTOOTH: number;
+    static WAVEFORM_SQUARE: number;
+    static WAVEFORM_TRIANGLE: number;
 }

@@ -1,67 +1,11 @@
-"use strict";
 // Imports
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Sound = void 0;
-var writeLine_1 = require("../../functions/writeLine");
-var _1 = require(".");
-var SoundConsts = __importStar(require("../../types/Sound"));
+import { Hub } from "./index";
 // Code
 /**
  * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound
  * @extends Hub
  */
-var Sound = /** @class */ (function (_super) {
-    __extends(Sound, _super);
-    function Sound(variableName) {
-        var _this = _super.call(this) || this;
-        if (!variableName) {
-            _this.variableName = "sound";
-        }
-        else {
-            _this.variableName = variableName;
-            (0, writeLine_1.writeLine)("".concat(variableName, " = sound"), "code");
-        }
-        (0, writeLine_1.writeLine)("from hub import sound", "imports");
-        return _this;
-    }
+export class Sound extends Hub {
     /**
      * Plays a beep sound from the hub
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-beep
@@ -76,46 +20,23 @@ var Sound = /** @class */ (function (_super) {
      * @param waveform The synthesized waveform. Use one of the constants in the hub.sound module.
      * @param channel The desired channel to play on, options are sound.DEFAULT and sound.ANY
      */
-    Sound.prototype.beep = function (freq, duration, volume, attack, decay, sustain, release, transition, waveform, channel) {
-        if (volume < 0 || volume > 100) {
-            throw new Error("Volume must be between 0 and 100");
-        }
-        if (attack == undefined) {
-            attack = 0;
-        }
-        if (decay == undefined) {
-            decay = 0;
-        }
-        if (sustain == undefined) {
-            sustain = 100;
-        }
-        if (release == undefined) {
-            release = 0;
-        }
-        if (transition == undefined) {
-            transition = 10;
-        }
-        if (waveform == undefined) {
-            waveform = SoundConsts.default.WAVEFORM_SINE;
-        }
-        if (channel == undefined) {
-            channel = SoundConsts.default.DEFAULT;
-        }
-    };
+    static beep(freq, duration, volume, attack = 0, decay = 0, sustain = 100, release = 0, transition = 10, waveform = 1, channel = -1) {
+        return new Promise((resolve) => setTimeout(resolve, 1000));
+    }
     /**
      * Stops all noise from the hub
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-stop
      */
-    Sound.prototype.stop = function () { };
+    static stop() { }
     /**
      * @see https://spike.legoeducation.com/prime/modal/help/lls-help-python#lls-help-python-spm-hub-sound-func-volume
      * @param volume The volume to set (0-100)
      */
-    Sound.prototype.volume = function (volume) {
-        if (volume < 0 || volume > 100) {
-            throw new Error("Volume must be between 0 and 100");
-        }
-    };
-    return Sound;
-}(_1.Hub));
-exports.Sound = Sound;
+    static volume(volume) { }
+}
+Sound.ANY = -2;
+Sound.DEFAULT = -1;
+Sound.WAVEFORM_SINE = 1;
+Sound.WAVEFORM_SAWTOOTH = 3;
+Sound.WAVEFORM_SQUARE = 2;
+Sound.WAVEFORM_TRIANGLE = 1;

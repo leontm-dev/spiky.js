@@ -1,6 +1,6 @@
 // Imports
 
-import { Hub } from ".";
+import { Hub } from "./index";
 
 // Code
 
